@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML with CSS3 Fonts and Text Effects</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+        h1 {
+            color: #3498db;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        p.gradient-text {
+            background: linear-gradient(to right, #3498db, #e74c3c);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        p.stroke-text {
+            color: #fff;
+            -webkit-text-stroke: 2px #e74c3c;
+        }
+        p.rotate-text {
+            display: inline-block;
+            transform: rotate(-15deg);
+        }
+        p.scale-text:hover {
+            transform: scale(1.2);
+        }
+        p.animate-text {
+            animation: colorChange 4s infinite alternate;
+        }
+
+        @keyframes colorChange {
+            from {
+                color: #e74c3c;
+            }
+            to {
+                color: #3498db;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS3 Fonts and Text Effects</h1>
+    <p class="gradient-text">This text has a gradient background.</p>
+    <p class="stroke-text">This text has a stroke effect.</p>
+    <p class="rotate-text">This text is rotated.</p>
+    <p class="scale-text">Hover over this text to see a scale effect.</p>
+    <p class="animate-text">This text has a color change animation.</p>
+</body>
+</html>
