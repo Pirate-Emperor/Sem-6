@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML with CSS3 Transforms, Transitions, Animations, and Resize</title>
+    <style>
+        .transform-2d:hover {
+            transform: rotate(45deg) scale(1.5);
+        }
+        .transform-3d:hover {
+            transform: rotateY(180deg) translateZ(50px);
+        }
+        .transition-example {
+            transition: transform 0.5s ease-in-out;
+        }
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .animation-example {
+            animation: rotate 2s linear infinite;
+        }
+        .resize-example {
+            resize: both;
+            overflow: auto;
+            width: 200px;
+            height: 200px;
+            border: 2px solid #3498db;
+            padding: 10px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>2D and 3D Transformations</h2>
+    <div class="transform-2d transition-example">Hover to Rotate and Scale (2D Transform)</div>
+    <div class="transform-3d transition-example">Hover to Rotate (3D Transform)</div>
+    <h2>Animations</h2>
+    <div class="animation-example">This element rotates continuously (Animation)</div>
+    <h2>Resize Property</h2>
+    <div class="resize-example" contenteditable="true"></div>
+</body>
+</html>
