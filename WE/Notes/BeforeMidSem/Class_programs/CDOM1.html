@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="#" onclick="addtext();">Add Text Here...</a>
+    
+    <p id="location">Text GOing to be added here...</p>
+
+    <a href="#" onclick="remtext();">Remove Text From Here...</a>
+    <br><br>
+    <button type="button" onclick="createl();">Create List</button>
+    <button type="button" onclick="addtl();">Add Item</button>
+    <button type="button" onclick="remtl();">Remove Item</button>
+    <input type="text" id="val"/>
+    <p id="itemloc">Item added here...</p>
+       <script type="text/javascript">
+
+            function addtext(){
+                var newele = document.createElement("p");
+                var attr = document.createAttribute("style");
+                attr.value = "color:red; background-color:yellow; font-size:2rem";
+                var text = document.createTextNode("Paragraph added...");
+                newele.appendChild(text);
+
+                var docElement = document.getElementById("location");
+                docElement.appendChild(newele);
+                newele.setAttributeNode(attr);
+
+            }
+
+            function remtext(){
+                var docElement = document.getElementById("location");
+                docElement.removeChild(docElement.lastChild);
+            }
+
+            function createl(){
+                var newnode = document.createElement("ul");
+                newnode.setAttribute("id","task");
+                var docElement = document.getElementById("itemloc");
+                docElement.appendChild(newnode);
+                alert("List created...");
+            }
+
+            function addtl(){
+                var val = document.getElementById("val").value;
+                var l = document.getElementById("task");
+                var li = document.createElement("li");
+                var text = document.createTextNode(val);
+                var attr = document.createAttribute("style");
+                attr.value = "color:red; background-color:yellow; font-size:2rem";
+                
+                li.appendChild(text);
+                li.setAttributeNode(attr);
+                l.appendChild(li);
+            }
+            function remtl(){
+                var docElement = document.getElementById("task");
+                docElement.removeChild(docElement.firstChild);
+            }
+
+       </script> 
+</body>
+</html>
