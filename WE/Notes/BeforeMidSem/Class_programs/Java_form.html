@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var ar1 = [[10,11,12], [24,25,60], [10.137,493.78],["IIITS", 'a', 'r', "ABC"]];
+        printarray(ar1);
+        modify(ar1);
+        printarray(ar1);
+        modifyelement(ar1[0][1], ar1);
+        printarray(ar1);
+        function printarray(ar1){
+            for(var i in ar1){
+                for(var k in ar1[i])
+                document.write("Array element: "+ i + " ->" +ar1[i][k] + "<br>");
+                
+            document.write("Array element: "+ i + " ->" +ar1[i] + "<br>");
+            }
+
+            document.write(ar1);
+        }
+
+        function modify(ar1){
+               for(var k in ar1)
+               for(var t in ar1[k])
+                    ar1[k][t]*=10;     
+        }
+
+        function modifyelement(e, ar1){
+            e*=500;
+            document.write("e ---> "+e+"<br>");
+            ar1[1][1] = e;
+        }
+    </script>
+</head>
+<body>
+    <h3>Printing Array</h3>
+    <h1>Print the Value</h1>
+    <form name="form1" method="get" action="output.html">
+      Username: <input type="text" name="username" value="ABC"><br><br>
+      Password<input type="password" name="password" value=""><br><br>
+      Phone Number: <input type="tel" name="phonenum" id="phn"><br><br>
+      Email Address: <input type="email" name="email" id="email"><br><br>
+      <input type="radio" name="city" value="Ahmedabad">ADI
+      <input type="radio" name="city" value="Surat">Surat
+      <input type="radio" name="city" value="Mumbai">Mumbai<br><br>
+
+      <input type="checkbox" name="hobby" value="Reading">Reading
+      <input type="checkbox" name="hobby" value="Music">Music
+      <input type="checkbox" name="hobby" value="Sport">Sport<br><br>
+      <select name="state">
+        <option value="GUjarat">GUjarat</option>
+        <option value="Rajasthan">Rajasthan</option>
+        <option value="MP">MP</option>
+      </select>
+
+      <button type="submit" name="button" onclick="printvalue();">Submit</button>
+      <button type="submit" onclick="printvalue();">Display Value on New Page</button>
+    </form>
+    <script>
+        function printvalue(){
+            name = document.form1.username.value;
+            
+            localStorage.setItem("uname", name);
+            hobby = '';
+            for(i=0;i<3;i++){
+                
+                if(document.getElementsByName('hobby')[i].checked == true){
+                    hobby = hobby + " "+document.getElementsByName('hobby')[i].value;
+                }
+            }
+
+            for(i=0;i<3;i++){
+                if(document.getElementsByName('city')[i].checked == true){
+                    gender = document.getElementsByName('city')[i].value;
+                }
+            }
+            document.write(name + "<br>");
+             document.write("Hobby : "+ hobby + "<br>");
+             document.write("radi  utton value :" + gender);
+
+
+        }
+    </script>
+</body>
+</html>
