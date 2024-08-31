@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #imageContainer {
+            width: 400px;
+            height: 300px;
+            position: relative;
+        }
+        .image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleButton">Toggle Paragraph</button>
+    <p id="myParagraph">Hidden paragraph.</p>
+    <div id="slideDiv" style="background-color: lightblue; padding: 20px;">
+        Click -> Slide!
+    </div>
+    <div id="fadeDiv" style="background-color: lightgreen; padding: 20px;">
+        Hover -> Fade!
+    </div>
+    
+    <div id="imageContainer">
+        <img class="image" src="1.jpg" alt="Image 1">
+        <img class="image" src="3.jpg" alt="Image 2">
+        <img class="image" src="4.jpg" alt="Image 3">
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#toggleButton").click(function() {
+                $("#myParagraph").toggle(1000);
+            });
+            $("#slideDiv").click(function() {
+                $(this).slideToggle(1000);
+            });
+
+            $("#fadeDiv").hover(function() {
+                $(this).fadeOut(1000).fadeIn(1000); 
+            });
+            var currentIndex = 0;
+            var totalImages = $(".image").length;
+
+            function showNextImage() {
+                $(".image").eq(currentIndex).fadeOut(500);
+                currentIndex = (currentIndex + 1) % totalImages;
+                $(".image").eq(currentIndex).fadeIn(500);
+            }
+            showNextImage();
+
+            $("#imageContainer").on("mouseenter",function(){
+                showNextImage();
+            });
+        });
+    </script>
+</body>
+</html>
