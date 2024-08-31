@@ -1,0 +1,110 @@
+<!-- Task-1 - Create a static webpage using table tags of HTML -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Table Example</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #da1515;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #eafdff;
+        }
+    </style>
+</head>
+<body>
+
+<h1>HTML Table</h1>
+
+<!-- Basic Table -->
+<table border="1">
+    <caption>Basic Table</caption>
+    <thead>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+        </tr>
+        <tr>
+            <td>Data 4</td>
+            <td>Data 5</td>
+            <td>Data 6</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Table with Colgroup -->
+<table border="1">
+    <caption>Table with Colgroup</caption>
+    <colgroup>
+        <col span="1" style="background-color: lightblue;">
+        <col span="2" style="background-color: lightgreen;">
+    </colgroup>
+    <thead>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+        </tr>
+        <tr>
+            <td>Data 4</td>
+            <td>Data 5</td>
+            <td>Data 6</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Table with Tfoot -->
+<table border="1">
+    <caption>Table with Tfoot</caption>
+    <thead>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+            <td>Data 3</td>
+        </tr>
+        <tr>
+            <td>Data 4</td>
+            <td>Data 5</td>
+            <td>Data 6</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">Footer Content</td>
+        </tr>
+    </tfoot>
+</table>
+
+</body>
+</html>
