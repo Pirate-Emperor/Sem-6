@@ -1,0 +1,12 @@
+Options +Indexes
+DirectoryIndex index.php index.html index.htm index2.html
+
+ErrorDocument 403 https://govunityxplorer-forum.rf.gd/403.php/
+ErrorDocument 404 https://govunityxplorer-forum.rf.gd/404.php/
+ErrorDocument 500 https://govunityxplorer-forum.rf.gd/500.php/
+
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:CF-Visitor} !{"scheme":"https"}
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
