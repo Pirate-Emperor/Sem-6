@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing</title>
+    <style>
+        canvas {
+            border: 1px solid #000;
+            background-color: #0000ff33;
+        }
+    </style>
+</head>
+<body>
+<canvas id="myCanvas" width="300" height="300"></canvas>
+<script>
+    const canvas = document.getElementById('myCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const centerSquareSize = 185;
+    const centerSquareColor = 'red';
+    const centerSquareOpacity = 0.5;
+
+    ctx.fillStyle = centerSquareColor;
+    ctx.globalAlpha = centerSquareOpacity;
+    ctx.fillRect(10, 10, centerSquareSize, centerSquareSize);
+
+    const outerSquareSize = centerSquareSize;
+    const outerSquareColor = 'green';
+    const outerSquareOpacity = 0.5;
+
+    ctx.fillStyle = outerSquareColor;
+    ctx.globalAlpha = outerSquareOpacity;
+    ctx.fillRect(10 + outerSquareSize/2, 10 + outerSquareSize/2, outerSquareSize, outerSquareSize);
+</script>
+</body>
+</html>
