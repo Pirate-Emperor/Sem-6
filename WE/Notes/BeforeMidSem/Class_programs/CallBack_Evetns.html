@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js" type="text/javascript"></script>
+  </head>
+  <body>
+
+   
+    <img id="img1" src="sun.jpg" alt="">
+    <h1>Header H1</h1>
+    <button id="mybutton">Click Me!</button>
+     <p>Please type some keys and see what happens</p>
+    <p id="output"></p>
+    <p id="keys"></p>
+    
+<script type="text/javascript">
+  var counter=1;
+  var x = Math.random()%10;
+  alert(x);
+  window.addEventListener('mouseover', function(evt123){
+    document.querySelector("#img1").width = 100;
+    document.querySelector("#img1").height = 400;
+  });
+
+  window.addEventListener('mouseout', function(evt123){
+    document.querySelector("#img1").width = 500;
+  });
+
+  //var b = document.querySelector('#mybutton');
+  document.querySelector('#mybutton').addEventListener('click', function(evt123){
+    output.innerHTML += "Button Clicked " + counter + " times" + "<br>";
+    counter++;
+  });
+
+  window.addEventListener('keyup', function(evt123){
+    document.querySelector("#keys").innerHTML += "Key Pressed " + evt123.key + " code " + evt123.keyCode + "<br>";
+
+  });
+
+  document.querySelector('h1').addEventListener('click', function(evt123){
+    alert("Hello");
+    
+    document.querySelector('h1').style("background-color","green");
+    //$("h1").css("background-color","blue");
+  });
+
+
+
+</script>
+  
+
+
+  </body>
+</html>
