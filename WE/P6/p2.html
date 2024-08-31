@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button onclick="startGame()">Start Game</button>
+
+<p id="gameStatus"></p>
+
+<script>
+var randomNumber;
+var guesses;
+var tries;
+
+function startGame() {
+  randomNumber = Math.floor(Math.random() * 100) + 1;
+  guesses = [];
+  tries = 5;
+  guessNumber();
+}
+
+function guessNumber() {
+  if(tries === 0) {
+    alert("Game over. You didn't guess the number. The number was " + randomNumber + ".");
+    return;
+  }
+
+  var userGuess = prompt("Please enter your guess", "0");
+  userGuess = Number(userGuess);
+
+  if(guesses.includes(userGuess)) {
+    alert("You have already guessed this number. Try a different number.");
+    guessNumber();
+  } else {
+    guesses.push(userGuess);
+    tries--;
+
+    if(userGuess === randomNumber) {
+      alert("Congratulations! You guessed the number correctly.");
+    } else {
+      alert("Wrong guess. You have " + tries + " tries left.");
+      guessNumber();
+    }
+  }
+}
+</script>
+
+</body>
+</html>
