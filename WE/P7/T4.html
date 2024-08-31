@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 4</title>
+<style>
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  #info {
+    position: relative;
+    display: inline-block;
+    padding: 5px;
+    margin: 5px;
+    background-color: #f9f9f9;
+    border: 2px solid #cce5ff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  .dropdown span{
+    padding: 5px;
+    background-color: #f9f9f9;
+    border: 2px solid #cce5ff;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .highlight {
+    background-color: #cce5ff !important;
+  }
+</style>
+</head>
+<body>
+
+<div class="dropdown" id="menu1">
+  <span>Menu 1</span>
+  <div class="dropdown-content">
+    <a href="#">Submenu 1</a>
+    <a href="#">Submenu 2</a>
+    <a href="#">Submenu 3</a>
+  </div>
+</div>
+
+<div class="dropdown" id="menu2">
+  <span>Menu 2</span>
+  <div class="dropdown-content">
+    <a href="#">Submenu 1</a>
+    <a href="#">Submenu 2</a>
+  </div>
+</div>
+
+<div class="dropdown" id="menu3">
+  <span>Menu 3</span>
+  <div class="dropdown-content">
+    <a href="#">Submenu 1</a>
+    <a href="#">Submenu 2</a>
+    <a href="#">Submenu 3</a>
+    <a href="#">Submenu 4</a>
+  </div>
+</div>
+
+<div id="info">Hover to get Information Displayed</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.dropdown-content a').hover(function(){
+      $('.dropdown-content a').removeClass('highlight');
+      $(this).addClass('highlight');
+    });
+    $('.dropdown-content a').mouseenter(function(){
+      var menuText = $(this).parent().parent().find('span').text() + " " + $(this).text();
+      $('#info').text('Information related to ' + menuText);
+    });
+
+    $('.dropdown-content').mouseleave(function(){
+      $('#info').text('Hover to get Information Displayed');
+    });
+  });
+</script>
+
+</body>
+</html>
