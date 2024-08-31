@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML with CSS3 Backgrounds and Transparency</title>
+    <style>
+        body {
+            background-image: url('assets/1.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5)), url('assets/2.jpg');
+            background-size: cover;
+            padding: 50px;
+            color: #333;
+            text-align: center;
+        }
+        .transparent-box {
+            background-color: rgba(0, 128, 255, 0.5);
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header> <h1>Header with Semi-Transparent Background</h1></header>
+    <section> <h2>Section with Background Image and Gradient</h2><div class="transparent-box"> <p>Semi-transparent background color.</p></div></section>
+</body>
+</html>
