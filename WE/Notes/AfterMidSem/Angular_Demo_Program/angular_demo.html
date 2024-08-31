@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mymodule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="angular.min.js"></script>
+    <script src="script1.js"></script>
+    <script src="factory1.js"></script>
+    <title>Document</title>
+    <style>
+        .done-true{
+            text-decoration-line: line-through;
+            color:blue;
+        }
+            .css-form input.ng-invalid.ng-touched{
+                background-color: lightcoral;
+            }
+
+            .css-form input.ng-valid.ng-touched{
+                background-color: lightgreen;
+            }
+    </style>
+</head>
+<body>
+    <div>
+       10+20=      {{1+2}}
+       {{1==="1"}}
+       {{["jfer",892,903.89,'c'][0]}}
+    </div>
+
+    <div ng-controller="con1">
+        {{message}}
+    </div>
+    <div ng-controller="imgcon">
+        {{imgdata.name}}
+        {{imgdata.year}}
+        {{imgdata.company}}
+        <img src="{{imgdata.picfile}}" alt="" style="height: 200px;width: 200px;">
+    </div>
+
+    <div ng-controller="con1">
+        <input type="text" value={{message}} ng-model="message">
+        {{message}}
+    
+    </div>
+
+    <div ng-controller="eventdemo">
+        <table border="1px solid black">
+            <thead>Name</thead>
+            <thead>Like</thead>
+            <thead>Dislike</thead>
+            <tr ng-repeat="t in technologies">
+                <td>{{t.name}}</td>
+                <td>{{t.like}}</td>
+                <td>{{t.dislike}}</td>
+                <td><button ng-click="iclick(t)">Like </button></td>
+                <td><button ng-click="dclick(t)">Dislike</button></td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div ng-controller="todo">
+        <div ng-repeat="t in todolist">
+            <input type="checkbox" name="task1" id="task1" ng-model="t.done">
+           <span class="done-{{t.done}}">{{t.task}}</span> 
+            
+        </div>
+
+        <input type="text" ng-model="ntask">
+        <button ng-click="addtask()">Add New Task</button>
+        <p>Total Task: {{todolist.length}}</p>
+
+        <p>Remanining Task: {{left()}}</p>
+    </div>
+
+
+    <div ng-controller="checkdemo" ng-init="num1=10;num2=30">
+        <input type="checkbox" ng-model="check">Select All
+        <p ng-show="check">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta magni laboriosam pariatur, temporibus maiores eaque inventore corporis beatae sunt? Accusantium odio animi illo doloremque fugit unde natus libero recusandae itaque.</p>
+        <input type="checkbox" ng-model="check">First
+        <input type="checkbox" ng-model="check">Second
+        <input type="checkbox" ng-model="check">Third
+
+        <input type="number" ng-model="num1" ng-change="product()"/>
+        <input type="number" ng-model="num2" ng-change="product()"/>
+        <p>Result = {{res}}</p>
+        Res: <span ng-bind="res"></span></p>
+    </div>
+
+<div ng-controller="filterdemo">
+
+        <select ng-model="sortcol">
+            <option value="name">Name</option>
+            <option value="dob">DoB</option>
+            <option value="salary">salary</option>
+        </select>       
+      <input type="number" min="0" max="5" ng-model="rowlimit">
+        <table border="1px solid black">
+            <th>Name</th>
+            <th>DoB</th>
+            <th>Gender</th>
+            <th>Salary</th>
+
+            <tr ng-repeat="e in employees | orderBy:sortcol |limitTo: rowlimit">
+                <td>{{e.name | uppercase}}</td>
+                <td>{{e.dob| date:"MM-dd-yyyy"}}</td>
+                <td>{{e.gender | lowercase}}</td>
+                <td>{{e.salary | currency:"@":6}}</td>
+
+
+            </tr>
+        </table>
+    
+</div>
+<div ng-controller="factorydemo">
+    Input: <input type="text" ng-model="inputstr" ng-change="calllength()"> <br><br>
+    Output: <input type="text" ng-model="outputstr"> <br>
+    Length : <input type="text" ng-model="strlength">
+    Enter val: <input type="number" ng-model="val">
+    Ouput square: <input  type="number" ng-model="outputval">
+    <button ng-click="callstr(); callsquare()">Click..</button>
+</div>
+
+<div ng-controller="formcntrl">
+    <form name="myform" novalidate class="css-form">
+        FirstName: <input type="text" name="fname" ng-model="user.fname" required> <br><br>
+        <p ng-show="myform.fname.$invalid && myform.fname.$touched">Tell us your nme</p>
+        LastName:<input type="text" name="lname" ng-model="user.lname" required> <br><br>
+        Email:  <input type="text" name="email1" ng-model="user.email" required> <br><br>
+
+        <button ng-click="reset()"> Reset</button>
+        <input type="submit" name="save" value="Save" ng-click="update()">
+    </form>
+    <p>User Deatails: {{user}}</p>
+    <p>Master Data; {{master}}</p>
+    <p>firstName InValid: {{myform.fname.$invalid}}</p>
+    <p>firstName Valid: {{myform.fname.$valid}}</p>
+    <p>firstName Modify: {{myform.fname.$dirty}}</p>
+    <p>firstName Touched: {{myform.fname.$touched}}</p>
+    <p>firstName Unouched: {{myform.fname.$untouched}}</p>
+</div>
+
+</body>
+</html>
