@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h2>Select/Deselect All Checkboxes</h2>
+    <input type="checkbox" name="recipients[]" value="1"> Checkbox 1<br>
+    <input type="checkbox" name="recipients[]" value="2"> Checkbox 2<br>
+    <input type="checkbox" name="recipients[]" value="3"> Checkbox 3<br>
+    <input type="checkbox" name="recipients[]" value="4"> Checkbox 4<br>
+    <button id="select-all-teammembers">Toggle All</button>
+    <h2>Auto Tabbing Based on Character Count</h2>
+    <input type="text" id="serial1" maxlength="4" placeholder="Part 1">
+    <input type="text" id="serial2" maxlength="4" placeholder="Part 2">
+    <input type="text" id="serial3" maxlength="4" placeholder="Part 3">
+    <input type="text" id="serial4" maxlength="4" placeholder="Part 4">
+
+    <script>
+        $(document).ready(function() {
+            $("#select-all-teammembers").click(function() {
+                var checkBoxes = $("input[name='recipients[]']");
+                checkBoxes.prop("checked", !checkBoxes.prop("checked"));
+            });
+            $("input[type='text']").keyup(function() {
+                if (this.value.length === this.maxLength) {
+                    $(this).next("input[type='text']").focus();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
