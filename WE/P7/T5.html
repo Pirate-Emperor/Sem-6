@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .word-balloon {
+            background-color: #f00;
+            color: #000;
+            border: none;
+            padding: 10px;
+            margin: 10px;
+            cursor: pointer;
+            border: #000;
+        }
+
+        .balloon-text {
+            position: absolute;
+            background-color: #fff;
+            color: #f00;
+            border: 5px solid #000;
+            border-radius: 10px;
+            padding: 10px;
+            display: none;
+            z-index: 1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+    <title>Task 5</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button class="word-balloon" id="bold-button">Bold</button>
+    <button class="word-balloon" id="italic-button">Italic</button>
+    <div class="balloon-text" id="balloon-text"></div>
+    <script>
+        $(document).ready(function() {
+            $('#bold-button').click(function() {
+                $('#balloon-text').text('This is the Bold button!');
+                $(this).css({
+                    'background-color': '#fff',
+                    'color': '#f00',
+                    'border': '#000'
+                });
+                $('#italic-button').css({
+                    'background-color': '#f00',
+                    'color': '#000',
+                    'border': '#000'
+                });
+                showBalloon();
+            });
+
+            $('#italic-button').click(function() {
+                $('#balloon-text').text('This is the Italic button!');
+                $('#bold-button').css({
+                    'background-color': '#f00',
+                    'color': '#000',
+                    'border': '#000'
+                });
+                $(this).css({
+                    'background-color': '#fff',
+                    'color': '#f00',
+                    'border': '#000'
+                });
+                showBalloon();
+            });
+
+            function showBalloon() {
+                $('#balloon-text').css('display', 'block');
+                setTimeout(function() {
+                    $('#balloon-text').css('display', 'none');
+                }, 2000);
+            }
+        });
+    </script>
+</body>
+</html>
