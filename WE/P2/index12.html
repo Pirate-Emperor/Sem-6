@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Landing Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .navbar {
+            background-color: #373440;
+            color: #ffffff;
+        }
+
+        .jumbotron {
+            background-color: #005e60;
+            color: #ffffff;
+            padding: 80px;
+        }
+
+        .product-video {
+            width: 100%;
+            height: 400px;
+        }
+
+        .product-image {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 20px;
+        }
+
+        .features {
+            margin-top: 50px;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #28a745;
+        }
+        .product-info {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .btn-cta {
+            background-color: #28a745;
+            color: #ffffff;
+        }
+
+        .btn-cta:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Product Landing</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#features">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Jumbotron with Video -->
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Awesome Product</h1>
+        <p class="lead">Discover the power of our amazing product.</p>
+        <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/eaW0tYpxyp0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <!-- Product Information -->
+    <div class="container product-info">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="assets/1.jpg" alt="Product Image" class="product-image">
+            </div>
+            <div class="col-lg-6">
+                <h2>Key Features</h2>
+                <ul class="list-group features" id="features">
+                    <li class="list-group-item"><i class="fas fa-check-circle feature-icon"></i> Feature 1: One of a kind</li>
+                    <li class="list-group-item"><i class="fas fa-check-circle feature-icon"></i> Feature 2: Affordable</li>
+                    <li class="list-group-item"><i class="fas fa-check-circle feature-icon"></i> Feature 3: Faster</li>
+                </ul>
+                <p class="mt-4">Get all these amazing features and more with our awesome product. Take your experience to the next level!</p>
+                <a href="#contact" class="btn btn-cta btn-lg mt-3">Get Started</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="container mt-5" id="contact">
+        <h2 class="text-center">Contact Us</h2>
+        <p class="text-center">Have questions or ready to get started? Contact us today!</p>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="name">Your Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Your Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-cta btn-lg">Send Message</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+</html>
