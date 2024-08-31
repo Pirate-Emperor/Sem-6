@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 6</title>
+<style>
+    .slider-container {
+        width: 80%;
+        overflow-x: scroll;
+    }
+
+    .slider {
+        display: flex;
+    }
+
+    .slide {
+        flex: 0 0 auto;
+        margin-right: 10px;
+        width: 25%;
+    }
+    .slide img{
+        width: 100%;
+        height: auto;
+    }
+
+</style>
+</head>
+<body>
+
+<div id="slider-container">
+    <div class="slider">
+        <div class="slide"><img src="1.jpg" alt="Image 1"></div>
+        <div class="slide"><img src="2.jpg" alt="Image 2"></div>
+        <div class="slide"><img src="3.jpg" alt="Image 3"></div>
+        <div class="slide"><img src="4.jpg" alt="Image 4"></div>
+        <div class="slide"><img src="5.jpg" alt="Image 5"></div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+  var containerWidth = $(".slider-container").width();
+  var totalWidth = 0;
+  
+  $(".slide").each(function() {
+    totalWidth += $(this).outerWidth(true);
+  });
+
+  $(".slider").width(totalWidth);
+
+  $(".slider-container").on("scroll", function() {
+    var scrollPos = $(this).scrollLeft();
+    var maxScroll = totalWidth - containerWidth;
+
+    if (scrollPos >= maxScroll) {
+    }
+  });
+});
+</script>
+
+</body>
+</html>
