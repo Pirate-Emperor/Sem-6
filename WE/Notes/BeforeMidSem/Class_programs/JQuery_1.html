@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <title>Document</title>
+    <style>
+        .circle{
+            height: 30px;
+            width: 30px;
+            border: 1px solid black;
+            border-radius: 20px;
+            display: inline-block;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="circle">1</div>
+        <div class="circle">2</div>
+        <div class="circle">3</div>
+        <div class="circle">4</div>
+        <div class="circle">5</div>
+    </div>
+
+    <input type="text" id="maxval" />
+    <button type="button" id="updatecir">Update Circle</button>
+    <button type="button" id="button2">Click</button>
+    <p id="out"></p>
+
+
+    <script type="text/javascript">
+           $("#updatecir").click(updatecircle);
+           $(".circle").click(colorcircle);
+           var x=6;
+
+            document.querySelector("#button2").addEventListener('click', function(evt12){
+                document.querySelector("#out").innerHTML+= "button clicked" + "<br>";
+            });
+
+           function updatecircle(){
+            alert("hello");
+            var uval = $("#maxval").val();
+            for(i=0;i<uval;i++){
+                $("#container").append('<div class="circle">' + x++ + '</div>');
+                $(".circle").click(colorcircle);
+            }
+           }
+
+           function colorcircle(){
+            var ind = $(this).index();
+            $(".circle").each(function(){
+                   var k = $(this).index();
+                   if(k<=ind)
+                        $(this).css('background-color','yellow');
+                    else 
+                        $(this).css('background-color','white');
+            });
+
+
+           }
+
+    </script>
+
+</body>
+</html>
