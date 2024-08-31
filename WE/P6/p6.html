@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<img id="image" onmouseover="changeImage()" onmouseout="originalImage()" src="original.jpg" alt="Original Image">
+
+<script>
+function changeImage() {
+  document.getElementById("image").src = "new.jpg";
+}
+function originalImage() {
+  document.getElementById("image").src = "original.jpg";
+}
+</script>
+
+</body>
+</html>
