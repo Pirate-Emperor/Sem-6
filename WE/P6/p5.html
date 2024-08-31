@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<button id="expandButton" type="button" onclick="collapseExpand()">Click to expand</button>
+<div id="content" style="display: none;">
+  <ol>
+    <li>Information Security</li>
+    <li>Web Technology</li>
+    <li>Operating System</li>
+    <li>Theory of Computation</li>
+    <li>Software Engineering</li>
+  </ol>
+</div>
+<div id="aside">
+    <p> Paragraph following the list (does not collapse). </p>
+</div>
+
+<script>
+function collapseExpand() {
+  var content = document.getElementById("content");
+  if (content.style.display === "none") {
+    document.getElementById("expandButton").innerHTML = `Click to collapse`;
+    content.style.display = "block";
+  } else {
+    document.getElementById("expandButton").innerHTML = `Click to expand`;
+    content.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
