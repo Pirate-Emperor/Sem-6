@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Array Operations</h1>
+
+    <script>
+        const originalArray = [1, 2, 3, 4, 5, 5];
+        const squaredArray = $.map(originalArray, function (value) {
+            return value * value;
+        });
+        const secondArray = [6, 7, 8, 9];
+        let dupArray = $.merge([], originalArray);
+        const mergedArray = $.merge(dupArray, secondArray);
+        let dupArray2 = $.merge([], mergedArray);
+        const uniqueArray = $.unique(dupArray2);
+        document.write("<p>Original Array: " + originalArray.join(", ") + "</p>");
+        document.write("<p>Second Array: " + secondArray.join(", ") + "</p>");
+        // document.write("<p>Squared Array: " + squaredArray.join(", ") + "</p>");
+        document.write("<p>Merged Array: " + mergedArray.join(", ") + "</p>");
+        document.write("<p>Unique Array: " + uniqueArray.join(", ") + "</p>");
+    </script>
+</body>
+</html>
