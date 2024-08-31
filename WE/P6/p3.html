@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Input:</p>
+<textarea id="arrayInput"></textarea>
+
+<p>Search Element:</p>
+<input type="number" id="searchElement">
+
+<button onclick="binarySearch()">Search</button>
+
+<p>Output:</p>
+<textarea id="output" readonly></textarea>
+
+<script>
+var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function binarySearch() {
+  var arrayInput = document.getElementById("arrayInput").value;
+  var array = arrayInput.split(' ').map(Number);
+  var searchElement = document.getElementById("searchElement").value;
+  searchElement = Number(searchElement);
+
+  var start = 0;
+  var end = array.length - 1;
+  var output = "";
+
+  while (start <= end) {
+    var mid = Math.floor((start + end) / 2);
+
+    output += "Start: " + start + ", End: " + end + ", Mid: " + mid + ", Array[mid]: " + array[mid] + "\n";
+
+    if (array[mid] === searchElement) {
+      output += "Element found at index " + mid;
+      document.getElementById("output").value = output;
+      return;
+    } else if (array[mid] < searchElement) {
+      start = mid + 1;
+    } else {
+      end = mid - 1;
+    }
+  }
+
+  output += "Element not found";
+  document.getElementById("output").value = output;
+}
+</script>
+
+</body>
+</html>
