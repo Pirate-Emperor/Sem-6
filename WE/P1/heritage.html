@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage</title>
+    <style>
+        #logo {
+            width: 50px; /* Adjust the width as needed */
+            height: auto; /* Maintain aspect ratio */
+            margin-right: 10px;
+        }
+
+        h1 {
+            display: inline-block;
+            margin: 0;
+        }
+        
+        body {
+            background-image: url('images/background.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+
+        header {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+            /* position: absolute; */
+            bottom: 0;
+            width: 100%;
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* .heritage-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 10px;
+        } */
+
+        /* .heritage-list img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        } */
+
+        .heritage-list img:hover {
+            transform: scale(1.1);
+        }
+
+
+        .heritage-list {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .heritage-item {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .heritage-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .heritage-details {
+            flex: 1;
+        }
+
+        .heritage-name {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .heritage-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+        }
+
+        .heritage-link:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img id="logo" src="images/phoenix.png" alt="Logo">
+        <h1>City Heritage</h1>
+    </header>
+
+    <nav>
+        <a href="index5.html">Home</a>
+        <a href="heritage.html">Heritage</a>
+        <a href="hotel_book.html">Hotel Booking</a>
+        <a href="gallery.html">Gallery</a>
+    </nav>
+
+    <section id="heritage-list" class="heritage-list">
+    </section>
+
+    <script src="heritage.js"></script>
+
+    <footer>
+        <p>&copy; 2024 TourRev</p>
+    </footer>
+
+</body>
+</html>
