@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div style="display:flex; justify-content: center;">
+<div><p>Input:</p>
+<textarea class="text" id="inputText" rows=4> ABCDEFGHIJKLMNOPQRSTUVWXYZ </textarea></div>
+<div style="display: flex; align-items: center;"><button style="margin: 10px 10px 10px 10px;" onclick="applyCipher()">Encode ==></button></div>
+<div>
+<p>Output:</p>
+<textarea class="text" id="outputText" rows=4 readonly></textarea>
+</div>
+</div>
+<script>
+function generateKey() {
+  var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var key = alphabet.split('').sort(function() { return 0.5 - Math.random() }).join('');
+  return key;
+}
+
+function substitutionCipher(text, key) {
+  var alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var cipherText = "";
+
+  for (var i = 0; i < text.length; i++) {
+    var char = text[i];
+    if (alphabet.includes(char.toUpperCase())) {
+      var index = alphabet.indexOf(char.toUpperCase());
+      var cipherChar = key[index];
+      cipherText += (char === char.toUpperCase()) ? cipherChar : cipherChar.toLowerCase();
+    } else {
+      cipherText += char;
+    }
+  }
+
+  return cipherText;
+}
+
+function applyCipher() {
+  var key = generateKey();
+  var inputText = document.getElementById("inputText").value;
+  var cipherText = substitutionCipher(inputText, key);
+  document.getElementById("outputText").value = cipherText;
+}
+</script>
+
+</body>
+</html>
