@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML with CSS3 Selectors</title>
+    <style>
+        p {
+            color: #333;
+            font-size: 16px;
+        }
+        p.highlight {
+            background-color: yellow;
+        }
+        #container p {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        .box p {
+            font-weight: bold;
+        }
+        p:first-of-type {
+            font-style: italic;
+        }
+        p:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <p>This is a regular paragraph.</p>
+    <p class="highlight">This paragraph has a highlight class.</p>
+    <div id="container"> <p>This paragraph is inside a container.</p></div>
+    <div class="box"> <p>This paragraph is inside a box.</p> </div>
+    <p>This is the first paragraph in the document.</p>
+    <p>Another regular paragraph.</p>
+</body>
+</html>
